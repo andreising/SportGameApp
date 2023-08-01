@@ -33,7 +33,6 @@ fun SplashScreen() {
     ) {
         val paddingPercentage = 0.1f
         val screenHeight = maxHeight
-        val padding: Dp = (screenHeight * paddingPercentage)
         Image(
             modifier = Modifier.fillMaxSize(),
             painter = painterResource(id = R.drawable.background),
@@ -43,14 +42,14 @@ fun SplashScreen() {
         Box(modifier = Modifier.fillMaxWidth()){
             Image(modifier = Modifier.fillMaxSize(), painter = painterResource(id = R.drawable.logo), contentDescription = null)
         }
-        Box(
-            modifier = Modifier.fillMaxSize(),
-            contentAlignment = Alignment.BottomCenter
-        ) {
-            CircularProgressIndicator(
-                modifier = Modifier.size(100.dp).padding(bottom = padding),
-                color = LoadColor
-            )
-        }
+    }
+    Box(
+        modifier = Modifier.fillMaxSize().padding(bottom = 30.dp),
+        contentAlignment = Alignment.BottomCenter
+    ) {
+        CircularProgressIndicator(
+            modifier = Modifier.size(100.dp),
+            color = LoadColor
+        )
     }
 }
